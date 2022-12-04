@@ -1,0 +1,85 @@
+Learning Objectives 29th Sep 2022:
+
+	- Adding a column
+	- Removing a column
+	- Adding a constraint
+	- Removing a constraint
+	- order by
+	- like
+
+
+Renaming the column:
+
+	- ALTER TABLE employee RENAME COLUMN oldname TO newname;
+
+Adding a column:
+
+	- ALTER TABLE employee ADD city VARCHAR(30);	
+
+Removing a column:
+
+	- ALTER TABLE employee DROP city;
+
+Adding a constraint:
+
+	- ALTER TABLE employee MODIFY name VARCHAR(35) NOT NULL;
+	- CREATE TABLE employee (sid INT, sname VARCHAR(30), age INT, CONSTRAINT chk_age CHECK (age>18));
+
+Alter table:
+
+	- ALTER TABLE employee ADD CHECK (sid>10);
+	- ALTER TABLE employee ADD CONSTRAINT chk_sid CHECK (sid>10 AND sname='Janaki');
+	- ALTER TABLE employee DROP CONSTRAINT chk_sid;
+
+Order by:
+
+	- SELECT * FROM employees ORDER BY age;
+	- SELECT * FROM employees ORDER BY age, city DESC;
+
+Like:
+
+	- Used to create pattern for selecting the result:
+	- % -> Is used to denote any character and no of characters
+
+	SELECT * FROM employees WHERE city like '%i'; ---> Fetches the records of cities that are ending with the letter i
+	SELECT * FROM employees WHERE city like 'D%i'; ---> Fetches the records of cities that are staring with the letter D and ending with the letter i
+	SELECT * FROM employees WHERE city like '%h%i'; ---> Fetches the records of cities that are starting with any no of characters, having the letter h in the middle and ending with the letter i
+
+
+Updating a record in a tables:
+
+	- Updating a record is a DML Query
+	- UPDATE table_name SET colname1=value, colname2=value WHERE condition;
+
+	UPDATE employees SET city = 'Coimbatore', age = 27 WHERE city='Chennai';
+
+
+Deleting a record or records from table:
+
+	- It is a DML command
+	- DELETE will help to delete a particular record from the table
+	- DELETE will not change the table structure as DROP does
+
+	DELETE FROM employees WHERE city = 'Mumbai';
+	DELETE FROM employee;
+
+
+DROP vs DELETE:
+
+	- When a table is deleted the data can be retrieved back (Using some backup mechanism)
+		- Retains the structure of the table
+	- When it is dropped the entire structure of the table is removed from the memory along with the data of the table
+
+DROP TABLE tablename;
+DROP DATABASE dbname;
+
+
+
+
+
+
+
+
+
+
+

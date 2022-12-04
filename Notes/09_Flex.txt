@@ -1,0 +1,44 @@
+Learning Objectives 04th August 2022:
+
+	- Flexbox Introduction
+	- Orientations in Flexbox
+	- Flex wrap (Elements reponsive)
+	- Creating an html table with flexbox styling
+
+	- Design a profile page
+	- Implement the profile page with css flexbox
+		- Hero unit (The Main page with the banners & navigation)
+		- Paper layout -> To showcase our technology expertise
+		- About the author -> To show info about the author
+		- Contact page
+
+Flexbox:
+
+	- Is an advanced layout technique in css
+	- Can be used to create a responsive page from the scratch
+	- The elements can be placed to their actual position effectively with the flexbox
+	- To convert any html element into a flexbox -> display:flex
+
+
+Flex properties:
+
+	justify-content : flex-start, flex-end, center, space-between, space-around
+	align-items
+
+Orientation:
+
+	- row and column orientations are available
+	- The default orientation for the flex is row
+	
+
+	- row defines the main axis hotizontally and cross axis vertically
+	- column defines the main axis vertically and cross axis horizontally
+
+	- justify-content moves the elements along the main axis
+	- align items moves the elements on the cross axis
+	
+	- space-between : Provides space between the elements and moves the element to the start and end positions
+	- space-around : Provides equal space between the elements and leaves half the space at the start and end positions
+	- space-evenly : Provides space between the elements also to start and end positions
+
+

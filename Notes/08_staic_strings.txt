@@ -1,0 +1,173 @@
+Learning Objectives 09th Sep 2022 
+
+	- static, final
+	- hashCode(), equals(), toString()
+	- Strings in Java (Available methods in Strings)
+	- String vs StringBuffer vs StringBuilder
+
+
+In a class:
+
+	- Two types of variables or properties are created
+
+		- Variables belonging to the object of the class 
+			- Are called non static or instance variable
+			- Memory for the non static or instance variables are allocated when the object for the class is created
+			- A new copy of the variables will be created for each object created for the class
+
+		- Variables belonging to the class
+			- Are called as static variables or class variables
+			- Memory for the static variables are allocated when the classfile(Bytecode) is loaded into the JVM
+			- Created only once as soon as the class file is loaded into JVM	
+
+static keyword:
+
+	- A variable or a function with the static keyword are "the properties of the class"
+	- The methods or variables with the static keyword must be accessed with the name of the class not with the object
+	- A static method can access static variables only because the non static variable will be created in the future
+	
+	- A non static methid can access static and non static variables because both the type of variables would have been created by the time the non static method is created
+	- Non static / Instance variables are instantiated using the constructor
+	- Like wise static initializer are used to initialize the static variables
+
+final Keyword:
+
+	- The final keyword makes something unchangeable or immutable
+	- The final keyword can be applied on a variable or on a function or on a class
+	- When applied on a variable turns that variable into a constant
+	- When applied on a method that method can't be overriden
+	- When applied on a class that class can't be inherited
+
+
+
+	static{
+		// Code to initialize the static variable goes here
+	}
+
+
+Strings in Java:
+
+	- String is a very powerful data type in Java
+	- When string is used with the other types it converts the overall result into a string
+		"Result = "+10 ===> "Result = 10"
+	- String is a class ===> "message" ===> The object of the string class
+	- Strings are "immutable" ---> Not changeable
+	- StringBuffer is mutable ---> Changeable
+
+--------------------------------------------------------------------------------------------------------
+
+	- Finding a particular character (charAt())
+		- Helps finding the character in a string at a particular position
+
+	- Finding the length of strings (length())
+		- Returns total no of characters in a string
+	
+	- Concat two strings (+ or concat())
+		- Connects two strings
+		str1.concat(str2); ===> Returns a new string combining two strings
+
+	- lexiographical comparison (compareTo())
+		- This method belong to the builtin Comparable interface
+		- This method helps comparing two objects ---> Strings
+		- if both strings are equal then it returns ===> 0
+		- if the first string is larger than the second string then it returns ===> +ve integer
+		- if the second string is larger than the second string then it returns ===> -ve integer
+
+			Arun
+			Vignesh
+
+			A	- 65
+			B	- 66
+			C	- 67
+				:
+				:
+			Z	- 91
+
+			a	- 97
+			b	- 98
+				:
+				:
+			z	: 
+
+		- Case sensitivity
+		- NullPointerException
+
+	- Convert to upper and lower cases
+		toUpperCase()
+		toLowerCase()
+
+	- Finding the substring in Java substring(start, end)
+		- Helps us to extract a string from another string
+
+		start - inclusive
+		end   - exclusive
+
+	- Check if a string contains a specific text
+		public boolean contains("String")
+
+	- Check if a string starts with a text
+		public boolean startsWith(String prefix) 
+
+	- Check if a string ends with a specific text
+		public boolean endsWith("String")
+
+	- Check if strings are equal
+		public boolean equals() ---> Case sensitive comparison
+		public boolean equalsIgnoreCase() ---> Case insensitive comparison
+
+		- Both the above methods compares the hashCode of each strings and returns a boolean result
+		
+
+	- Converting a string into an encoded byte array
+		str.getBytes("UTF-16") ---> Returns an array of bytes with the ASCII encoding
+		- Can be converted into a string again by patthing the byte array into new String(byteArr);
+	- Converting a string into a character array
+		public void getChars(int srcBeginIndex, int srcEndIndex, char[] destination, int dstBeginIndex)    
+	- Finding the position of a given character in a string
+			int indexOf(int ch)
+			int indexOf(int ch, int fromIndex)
+			int indexOf(String substring)
+			int indexOf(String substring, int fromIndex)
+
+	- Checking if the string is empty
+		str.isEmpty() ---> Returns true if the string is empty
+
+	- Joining strings
+
+		String.join("delimiter", "str1", "str2", "str3")
+			
+	- Last index of a character in a string
+
+		int lastIndexOf(int ch)
+		int lastIndexOf(int ch, int fromIndex)
+		int lastIndexOf(String substring)
+		int lastIndexOf(String substring, int fromIndex)
+
+	- Replacing a text in a string
+
+		public String replace(char oldChar, char newChar)    
+		public String replace(CharSequence target, CharSequence replacement) 
+
+	- Replacing all text in a string
+
+		public String replaceAll(String regex, String replacement)  
+
+	- Spliting the strings based on a delimiter
+
+		public String split(String regex)  
+		public String split(String regex, int limit)  
+	
+	- Extracting a substring from a string
+
+		public String substring(int startIndex) 
+		public String substring(int startIndex, int endIndex) 
+	
+	- Converting a string into a character array
+
+		str.toCharArray()
+
+	-To remove the unwanted space from a string
+
+		str.trim()
+		
+		

@@ -1,0 +1,8 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+div + p{
+    background-color: aqua;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

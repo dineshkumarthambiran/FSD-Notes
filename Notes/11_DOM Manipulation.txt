@@ -1,0 +1,284 @@
+Learning objectives:
+
+
+        - Functions in JS
+        - To understand the basics of DOM
+        - Manipulate DOM from JS
+                
+
+        Functions in JS:
+
+
+                - Self contained sub programs
+                - Group of statements that are stored under a name and can be reused
+                - Reusability of codes is achieved with functions
+
+
+        Types:
+                
+                - Functions without arguments and without return type
+                - Functions with argument and without return type
+                - Functions without arguments but with return value
+                - Functions with argument and with return type
+
+
+                Categories of functions:
+
+
+                        - Built in functions (Library functions)
+                        - Creating our own functions
+
+
+
+
+                Arguments:
+
+
+                        - Are values passed to a function when calling it
+
+
+                Return values:
+                        
+                        - Are values returned by the called function as a response
+
+
+                function fnName(){
+                        console.log("Test")
+                        console.log("Message")
+                }
+
+
+                fnName()
+                fnName()
+
+
+                - How to pick an html element using the existing DOM methods (Using ids, classes, name, tag names and querySelector)
+                - Changing the properties of an existing html elements
+                - Control styles
+                - Add or remove CSS classes
+                - Create a new html element from JS using DOM
+                - Remove the existing html elements using DOM
+                - Adding event handlers for the html elements
+
+
+DOM: (Document Object Model)
+
+
+In Html tags we have attributes created inside tags/elements 
+In equivalent DOM object properties are created 
+
+
+---> HTML attributes and DOM properties are different
+---> Changes made on the DOM properties won't affect the HTML attributes
+
+
+
+
+<a href="">
+a==> Object
+  ==> link => Property
+document object = the whole html document
+document is the root element for the whole html
+
+
+Dynamic content can be added to the html page using dom
+
+
+	value 		---> To read/write the value from input
+	innerText	--->
+	innerHtml
+
+
+document object methods
+
+
+write("str")
+writeln("str")
+
+
+getElementById
+
+
+        getElementsById.innerText
+        getElementsById.id
+        getElementsById.classList
+
+
+getElementByClassName
+getElementsByTagName
+getElementsByName
+
+
+querySelector('element' or '#id' or '.classname') -> Picks and returns the first result
+querySelectorAll -> Picks and returns all the result
+
+
+Accessing attributes:
+
+
+- We can assign a selected dom element into an object
+- obj.attribute can be used to access/change the properties
+
+
+Attribute setter and getter methods
+
+
+Style can be changed using the 
+element.style.attribute
+
+
+CSS classes can also be added dynamically
+element.classList.add("class1", "class2")
+
+
+
+
+Adding event listener to an element using DOM api
+
+
+element.addEventListener('click', function(e){})
+
+
+Event bubbling:
+
+
+        - The parent event will be propagated to children also
+
+
+
+
+Create dom element:
+
+
+p = document.createElement("p")
+p.innerText = "text for the paragraph"
+p.id = "mypara"
+
+
+parent.appendChild(p)
+parent.removeChild(p)
+
+
+  //To pick an element from its root (Parent)
+    // console.log(document.all);
+    // console.log(document.all[7].children[1])
+    // console.log(document.all[7].children[1].children[3].innerText)
+
+    let para = document.getElementById('para');
+    para.innerText='New Data'
+
+    para.style = 'background-color:yellow; font-size:25px;';
+
+    let container = document.getElementById('container')
+    container.innerHTML = `<ul>
+        <li>Option 1</li>
+        <li>Option 2</li>
+        <li>Option 3</li>
+        <li>Option 4</li>
+    </ul>`
+
+    let button = document.getElementById('myButton');
+    // button.style = 'border: 1px solid black; background-color:yellow; color:red';
+    // button.innerText = "Clicked"
+    button.classList.add('buttonStyle');
+    button.classList.remove(button.classList[0])
+    console.log(button.classList)
+    }
+
+function changeUrl(){
+    let goto = document.getElementById('goto');
+    goto.href = 'https://www.google.com'
+
+    let myimg = document.getElementById('myimg');
+    myimg.src = "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+
+    console.log("Parent of 'GOTO href : '", 
+    (goto.parentNode
+        .parentNode
+        .parentNode
+        .parentNode
+        .parentNode
+        .parentNode
+        ));
+
+        console.log("Children of document : ",
+        document.children);
+}
+
+function pickByClassName(){
+    let element = document.getElementsByClassName('myclass');
+    console.log("triggered");
+   
+    for(var i=0; i< element.length; i++){
+        element[i].style = 'text-decoration:underline;'
+        console.log(element[i])
+    }
+
+    //Picking the list items by their class names
+    // let list_items = document.getElementsByClassName('list-items');
+
+    // for(var i=0; i< list_items.length; i++){
+    //     list_items[i].style = 'background-color:yellow; list-style-type:none;'
+    //     console.log(list_items[i])
+    // }
+
+   
+}
+
+function pickElementsByTagNames(){
+     // Picking the elements (list items) byt their tag names
+     let list_items = document.getElementsByTagName('li');
+
+     for(var i=0; i< list_items.length; i++){
+         list_items[i].style = 'background-color:yellow; list-style-type:none;'
+         console.log(list_items[i])
+     }
+}
+
+function pickElementsByNames(){
+    let elementsWithSameName = document.getElementsByName('text-data');
+   
+    for(let i=0; i< elementsWithSameName.length;i++){
+        console.log(elementsWithSameName[i]);
+        elementsWithSameName[i].innerText = 'New Content updated';
+    }
+}
+
+function pickElementsByQS(){
+    //Picking an element using QS using the class names
+    // let pickedUsingQS = document.querySelectorAll('.list-items');
+
+    //Picking an element using QS using the ids
+    // let pickedUsingQS = document.querySelectorAll('#myList');
+
+    //Picking an element using tag names 
+    let pickedUsingQS = document.querySelectorAll('li');
+    console.log(pickedUsingQS);
+}
+
+function createNewElement(){
+    let container2 = document.getElementsByClassName('container2');
+    
+    let hLink = document.createElement('a')
+    hLink.href = 'https://www/stackroute.in'
+    hLink.innerText = 'Click me'
+    hLink.id = 'linkId'
+
+    container2[0].appendChild(hLink)
+    console.log(container2);
+}
+
+function removeElement(){
+    let container2 = document.getElementsByClassName('container2');
+    let removableLink = document.getElementById('linkId');
+
+    container2[0].removeChild(removableLink);
+}
+
+function linkEventListener(){
+    let eventParagraph = document.getElementById('eventParagraph');
+
+    eventParagraph.addEventListener('mouseout', function(e){
+        alert('Now I am clickable ')
+    })
+}

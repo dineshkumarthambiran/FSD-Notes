@@ -1,0 +1,171 @@
+Learning Objectives 03rd Aug 2022 - AN:
+
+	- Framework introduction
+	- Introduction to bootstrap
+	- Comparison with css
+	- Advantages & Disvantages
+	- The code implementation
+
+
+Framework:
+
+	- Its a partially built application
+	- Components are already created and made available for immediate use
+
+Plain CSS:
+
+	- The developer has to do everything from the scratch
+	- Time consuming
+	- Highly customizable (Very powerful)
+
+Bootrstrap:
+
+	- Many builtin classes are available to achieve something
+	- With bootstrap the responsive web pages are created fast
+	- Fast delivery due to readymade components
+	
+	- Limited options are available for the styles
+	- Need to remember a lot of classes
+	- Not highly cutomizable
+	
+	- When used along with plain css it can be higly beneficial
+
+
+Boostrap Intro and Basics:
+
+	- What is Bootstrap 5?
+		- Consists of readymade CSS classes and JS
+		- JQuery removed from BS5
+
+	- Other front end frameworks are:
+		- Tailwind
+		- W3CSS - Plain CSS ---> From w3schools
+
+	- Why Bootstrap?
+		- Makes dev faster
+		- Easier to use
+		
+	- How to learn bootstrap effectively?
+		- Learn how bootstrap works
+		- Fundamentals of Bootstrap
+		- Only Handson
+
+	- Download the bootstrap project into computer ans start building the apps on it
+	- CDN ---> Content Delivery Network
+	
+
+Grid System classes:
+
+	xs (for phones - screens less than 768px wide)
+	sm (for tablets - screens equal to or greater than 768px wide)
+	md (for small laptops - screens equal to or greater than 992px wide)
+	lg (for laptops and desktops - screens equal to or greater than 1200px wide)
+
+
+	- Bootstrap works with the grid system
+	- container is an important class in the grid system
+	- row, col, col-3, col-4, col-sm-3, col-md-3 are some of the useful classes available in bootstrap
+
+	- well class can be applied for any element (Helps visualizing the layout of the grid)
+
+	The container element:
+
+		- The element that contains other elements are called container elements
+		- container and container-fluid (Are the builtin classes in bootstrap)
+			- container 		- leaves space at the left and right side of the div
+			- container-fluid	- leaves no space at the left and right side of the div
+
+
+	For text styles:
+
+		- text-primary
+		- text-success
+		- text-warning
+		- text-danger
+		- text-info
+
+	
+	For bg styles:
+
+		- bg-primary
+		- bg-success
+		- bg-warning
+		- bg-danger
+		- bg-info
+
+	Leading and small texts:
+
+		- lead
+		- small
+
+	Alignment:
+
+		- text-left
+		- text-right
+		- text-center
+		- text-justify
+
+	text cases:
+
+		- text-lowercase
+		- text-uppercase
+		- text-capitalize
+
+
+List styles:
+
+		- list-unstyled
+		- list-inline
+
+
+Table styles:
+
+		- table
+		- table-striped
+		- table-bordered
+		- table-hover
+		- table-condensed
+		- table-responsive
+
+
+Images:
+
+		- container > row > col-md-6 > img-responsive
+
+		- img-responsive
+		- img-rounded
+		- img-thumbnail
+
+Button:
+
+		- btn
+		- btn-default
+		- btn-primary
+		- btn-success
+		- btn-info
+		- btn-warning
+		- btn-danger
+
+
+		- btn-xs
+		- btn-sm
+		- btn-md
+		- btn-lg
+		- btn-block		
+		- active
+		- disabled
+
+
+Utilities:
+
+	Marging:
+
+		margin-left 		--> ml-5 ---> 0 to 5
+		margin-right 		--> mr-3 ---> 0 to 5
+		margin-left-right	--> mx-2 ---> 0 to 5
+		margin-top-bottom	--> my-3 ---> 0 to 5
+		margin all over		--> m-5	 ---> 0 to 5
+
+	Padding:
+
+		padding-left		--> pl-5

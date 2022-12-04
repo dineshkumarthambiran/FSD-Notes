@@ -1,0 +1,57 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.header{
+    background-color: aqua;
+    text-align: center;
+    height: 50vh;
+}
+
+.navbar{
+    height: 10px;
+    background-color: green;
+    box-sizing: border-box;
+    padding-top: 8px;
+    position: sticky;
+    top: 3px;
+}
+
+.navbar > div{
+    float: left;
+    margin: 10px;
+    color: white;
+}
+
+.thumbnail{
+    background-color: blue;
+    color: white;
+    text-align: center;
+    height: 70vh;
+}
+
+.main{
+    background-color: black;
+    color: white;
+    text-align: center;
+    height: 70vh;
+}
+
+.ads{
+    background-color: blueviolet;
+    color: white;
+    text-align: center;
+    height: 70vh;
+}
+
+.footer{
+    background-color: grey;
+    color: white;
+    text-align: center;
+    height: 30vh;
+}
+
+#custom-font{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

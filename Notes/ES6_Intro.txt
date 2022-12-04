@@ -1,0 +1,98 @@
+Learning Objectives 09th Aug 2022 - AN
+
+
+        - ES6 features - ECMA Script
+
+
+var, let and const Keywords
+Multi-line Strings
+Template Literals
+Enhanced Object Literals
+Destructuring Assignment - From an object and an array
+Default Parameters
+Arrow Functions
+Async Programming introduction
+        Callback functions
+        Promises
+        Async and Await
+Classes
+Modules
+
+
+
+
+1. var, let and const Keywords:
+
+
+        - var is function scoped
+        - let is block scoped
+        - const is unchangeable
+
+
+
+
+2. Multiline strings:
+
+
+        - Are created using ``
+        - Helps creating multiline strings
+        - No need to use escaping or formatting characters for new line or text alignments
+
+
+
+
+3. Template literals
+        - Are alternatives for string formatting
+        - `` backticks are used to create template literals
+
+
+let multiLineStringES6 = `
+    Front end:
+        1. Html
+        2. Css
+        3. JS
+        4. React
+
+        Total Duration ${courseDuration} Hrs
+        Welcome Message ${courseDuration}
+        Author's Message ${author}
+`
+
+
+
+4. Enhanced Object Literals
+
+
+        - A way of creating objects easily in JS
+        - Helps to create a JS object directly without object creation
+
+let student = {
+    sid:1234,
+    sname:"Vignesh",
+    country:"India"
+}
+
+
+function printStudentDetails({sid, sname, country}){
+    let vignesh = {
+       studentid:sid,
+       country,
+       sname
+    }
+
+    console.log(`Student id: ${vignesh.studentid}`);
+    console.log(`Student Name: ${vignesh.sname}`);
+    console.log(`Student Country: ${vignesh.country}`);
+}
+
+
+
+
+function createMachine(name, status) {
+    return {
+        name,
+        status
+    };
+}
+
+

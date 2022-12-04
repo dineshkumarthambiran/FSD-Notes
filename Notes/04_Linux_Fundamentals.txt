@@ -1,0 +1,64 @@
+Learning Objectives 28th July 2022 - AN:
+
+	- find operation
+	- filter operation
+
+
+finding a file or directory:
+
+find path -name filename
+	
+	find . -name -type f \( -name "pattern" -o -name "pattern" \) ---> Incase to find files with multiple conditions
+	find . -name -type d \( -name "pattern" -o -name "pattern" \) ---> Incase to find directories with multiple conditions
+
+
+find path -iname filename
+
+	find . -iname "PaTTern"  ---> Makes a case insensitive search
+
+find path -iname filename*.extension
+
+	find . -iname "PaTTern.extension"  ---> Makes a case insensitive search including file extension
+
+find path -mtime -10  ---> Helps finding the files created with last 10 days
+find path -mtime +10  ---> Helps finding the files created Before 10 days
+
+	
+find path -mtime -10 -size +300M ---> This command fetches the records that was created with in last 10 days and has filesize more than 300M
+
+
+
+find path -mtime -10 -size +300M | grep aws
+find . -type f -name a* -print
+
+
+
+
+
+Filters:
+
+Combination of multiple commands
+
+pipe | (define multiple commands and get a single result)
+more - Display the result page by page
+less - Display the result page by page but can be navigated through line no
+
+	ls -l | more
+
+wc -l, -c, -w
+	cat filename | wc
+
+tr  - Convert from one format to another
+	ls -l | tr -s "[a-z]" "[A-Z]"
+
+
+
+grep - Searching pattern
+
+	- Accepts regular expressions to find the result
+
+	cat filename | grep "regex"
+
+	cat filename | grep "^s"  ---> Prints all the words starting with the letter "s"
+	cat filename | grep "d$"  ---> Prints all the words ending with d
+	cat filename | grep "^s" | wc -l 	

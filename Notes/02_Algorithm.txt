@@ -1,0 +1,241 @@
+Learning objectives 27th July 2022 - FN: 
+
+	- Problem solving techniques (tools)
+		- Algorithm
+		- Flowcharts
+
+
+Problem solving techniques (tools):
+
+	- Will help provide a generic solution for problems
+	- Those generic solutions can be implemented with different technologies
+	- Technology neutral solutions
+
+Types of popular problem solving tools are:
+
+	- Algorithm (Basic English text representation of solution)
+	- Flowchart (Pictorial representation of a solution)
+
+Algorithms:
+
+	- Step by step process to find the final solution
+	- English description of the solution
+	- The algorithm written one person may vary from the algorithm written by another person
+
+Algorithm to withdraw money from ATM machine:
+
+	Step 0: start
+
+	Step 1: Insert the debit card into ATM machine	
+	
+	Step 2: Read the instructions
+
+	Step 3: Click on withdraw money option
+
+	Step 4: Enter the amount to be withdrawn
+
+	Step 5: Enter the PIN
+
+	Step 6: Collect the Cash
+
+	Step 7: Collect the card
+
+	Step 8: Collect the reciept
+
+	Step 9: end
+
+
+
+Negative scenarios:
+
+
+	Step 0: start
+
+	Step 1: Insert the debit card into ATM machine 
+		
+		Step 1.1:if the card is detected then go to step 2
+
+		Step 1.2: else go to step 1 
+	
+	Step 2: Read the instructions
+
+	Step 3: Click on withdraw money option
+
+	Step 4: Enter the amount to be withdrawn
+		
+		Step 4.1: If the machine doesn't have enough money then display "machine doesn't have sufficient money" go to step 9
+		Step 4.2: If the machine has enough money then
+
+			Step 4.2.1: If the customer doesn't have sufficient fund in his account then display "You don't have anough cash in your account"
+			Step 4.2.2: Else show option to input amount to be withdrawn
+
+
+	Step 5: Enter the PIN
+
+		Step 5.1: If the entered PIN is wrong then display "Incorrect PIN" and go to step 5
+		Step 5.2: Else dipatch cash and deduct money from account
+
+	Step 6: Collect the Cash
+
+	Step 7: Collect the card
+
+	Step 8: Collect the reciept
+
+	Step 9: end
+
+
+
+Algorithm to add two numbers:
+
+	Step 0: Start
+	
+	Step 1: Input two numbers
+	
+	Step 2: Calculate the sum
+	
+	Step 3: Display the "Sum = " sum
+
+	Step 4: end
+
+
+Algorithm to check the eligibility to open a bank account:
+
+	Step 0: Start
+
+	Step 1: Input your age
+
+	Step 2: Store age "customer_age"
+
+	Step 3: check if customer_age is >= 18	
+
+		Step 3.1: Then Display "You are eligible to open account" and go to step 4
+		
+		Step 3.2: Else Display "You are not eligible to open account" and go to step 4
+
+	Step 5: end
+
+
+Algorthim to perform Linear Search:
+
+	Linear Search:
+
+		- Very inefficient way of finding an element from a data structure which is already sorted
+		- Very useful when we find an element from a datastructure which is not sorted
+		- The best case scenario for finding an element from the array is 1
+		- The worst case scenario would be finding an element from array is n-1
+
+	Binary search:
+
+		- Very efficient way of finding an element from a data structure which is already sorted
+		- Not useful when we find an element from a datastructure which is not sorted
+		- The best case scenario for finding an element from the array is 1
+		- The worst case scenario for binary search is depending on how deeper we are going inside the tree 
+
+
+	1 single page from a book of 2000 pages
+
+
+		      1 / 17280000
+		      1 / 8640000
+		      1 / 4320000
+		      1 / 2160000
+		      1 / 1080000
+		      1 / 512000
+		      1 / 256000
+		      1 / 128000
+		      1 / 64000
+		      1 / 32000	
+		      1 / 16000
+		      1 / 8000
+		      1 / 4000	
+        1st time ---> 1 / 2000
+	2nd time ---> 1 / 1000
+	3rd	 ---> 1 / 500
+	4th 	 ---> 1 / 250
+	5th 	 ---> 1 / 125
+	6th 	 ---> 1 / 62
+	7th 	 ---> 1 / 31
+	8th	 ---> 1 / 15
+	9th 	 ---> 1 / 7
+	10th 	 ---> 1 / 3
+	11th 	 ---> 1 / 1
+	
+--------------------------------------------------------------------------------------------------------------------------
+
+Displaying a name for 100 times:
+
+Step 0:
+Step 1: Input name and store into "name"
+Step 2: repeat counter = 1 to 100, increment counter by 1 after each execution
+	step 2.1: Display name
+Step 3: Stop
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+Linear Search:
+
+	Step 0: Start
+	Step 1: Get input for account numbers of 100 customers to a number array (accounts)
+	Step 2: Get input the account number to be found (sno)
+	Step 3: Repeat i=0 upto n-1:
+		Step 4: Check if sno == accounts[i] if true:
+			Step 4.1.1: Display "Customer exists" and go to step 6
+			Step 4.2: Else increase i by 1 then go to step 3
+	Step 5: Display "Customer doesn't exist"
+	Step 6: Stop
+	
+
+Binary Search:
+
+	Step 0: Start
+	Step 1: Get input for account numbers of 6 customers to a number array (accounts)
+	Step 2: Get input for the account number to be found (sno)
+	Step 3: create start and assign 0, create end assign n-1
+	Step 4: Create mid and assign (start+end)/2
+	Step 5: Repeat i=0 upto n-1
+		Step 5.1: if sno == accounts[mid] true then:
+			Step 5.1.1: Display "Customer found already" end the program
+
+		Step 5.2: Else if sno > accounts[mid] true then:
+			Step 5.2.1: start = mid+1 and go to step 5
+
+		Step 5.3: Else if sno< accounts[mid] true then:
+			Step 5.3.1: end = mid-1
+
+		Step 5.4: mid = (start + end)/2
+
+	Step 6: Display "Customer not found"
+	Step 7: Stop
+
+
+
+Tasks:
+
+	1. Write the complete algorithm to deposit money into the cash deposite machine
+	2. Write the complete algorithm to apply for housing loan in your bank
+
+
+Input the loan amount
+Tenure
+Rate of interest
+
+===> Total amount to be paid
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

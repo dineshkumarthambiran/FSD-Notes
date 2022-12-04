@@ -1,0 +1,98 @@
+Learning Objectives 18th Aug 2022 - FN:
+
+	- JSX
+	- Thinking in React
+	- Creating components from the scratch
+	- Default exports vs named exports
+
+
+JSX -> Java Script and XML
+
+	- Hybrid syntax
+	- Neither html nor JS
+
+To name a variable in Javascript:
+
+	user_name  ---> ok
+	userName   ---> ok
+
+	//username ---> Wrong
+	//a	     ---> Wrong
+
+To name a function:
+	
+
+	userName
+	//Ok
+
+	setUserName(userName){
+		this.userName = userName
+	}
+
+	//Wrong
+	SetUserName(){
+
+	}
+
+	setusername(){
+
+	}
+
+To name a component:
+	
+	//Ok
+	function Header(){
+
+	}
+
+	//Wrong
+	function header(){
+
+	}
+
+
+To name a class:
+
+	class StudentDetails{
+	
+	}
+
+
+
+
+----------------------------------------------------------------------------------------------------
+
+	class StudentDetails{
+		dob,
+		age,
+		name,
+		nameLength
+		
+		constructor(props){
+			this.state = {
+				dob,
+				age,
+				name,
+				nameLength
+			}
+
+		}
+		
+	}	
+
+----------------------------------------------------------------------------------------------------
+
+
+Single responsibility principle
+Build a static version of the components
+Minimal representation of the state (DRY)
+	Passed from props?
+	Remains unchanged?
+	Can the property be computed from other properties?
+
+
+
+Functions
+JS Assignment explanation
+
+

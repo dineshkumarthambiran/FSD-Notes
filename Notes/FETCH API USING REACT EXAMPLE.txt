@@ -1,0 +1,184 @@
+APP.js
+
+import logo from './logo.svg';
+import './App.css';
+import Employees from './Employeesaxios';
+
+function App() {
+  return (
+    <div className="App">
+     <Employees />
+    </div>
+  );
+}
+
+export default App;
+
+
+______________________________________________________________________________________________________
+
+EMPLOYEES.js
+
+import React,{useState} from 'react'
+import axios from 'axios'
+function Employees() {
+ 
+  //Setting up the base url for making requests  
+  const api = axios.create({
+    baseURL:`http://localhost:3000/employees/`
+  })
+  
+  //employee state to hold the employee records in a centralized place
+
+  let getAllRecords = ()=>{
+    api.get(`/`).then(res =>{
+       console.log(res.status);
+       console.log(res.statusText);
+       setEmployees((employees)=> res.data)
+    })
+  }
+
+  const [employees, setEmployees] = useState([])
+  const [empId, setEmpId] = useState(0) 
+  const [empName, setEmpName] = useState('')
+  const [location, setLocation] = useState('')
+
+  let updateEmpId = (event)=>{
+    setEmpId(event.target.value)
+    console.log(empId)
+  }
+
+  let updateEmpName = (event)=>{
+if(event.target.value === ''){}
+else{
+    setEmpName(event.target.value)
+    console.log(empName)
+  }}
+
+  let updateLocation= (event)=>{
+    if(event.target.value === ''){}
+    else{
+    setLocation(event.target.value)
+    console.log(location)
+  }}
+
+  let insertContent = ()=>{
+    const recordToInsert = 
+    {
+        "id":empId,
+        "name":empName,
+        "location":location
+    }
+    
+  api.post('/',recordToInsert)
+  .then(res=>console.log(res))
+  .catch(err=>console.log(err))
+  getAllRecords()
+  }
+
+  let deleteData = () => {
+
+    let recordToDelete=
+    {
+        "id":empId,
+    }
+
+    api.delete(`/${recordToDelete.id}`)
+    .then(res=>console.log(res))
+    .catch(err=>console.log(err))
+     getAllRecords()
+  }
+
+
+  let UpdateData = () => {
+
+    let RecordToUpdate=
+    {   
+        "id":empId,
+        "name":empName,
+        "location":location
+    }
+
+    api.patch(`/${empId}`, RecordToUpdate)
+    .then(res=>console.log(res))
+    .catch(err=>console.log(err))
+    
+     getAllRecords()
+  }
+
+
+
+  
+  return (
+    <div>
+        
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Employee Id</th>
+                    <th>Employee Name</th>
+                    <th>Employee Location</th>
+                </tr>
+            </thead>
+            <tbody>
+            {
+                employees.map((employee)=>( 
+                <tr key={employee.id}>
+                    <td>{employee.id}</td>
+                    <td>{employee.name}</td>
+                    <td>{employee.location}</td>
+                </tr> ))
+            }
+            </tbody>
+        </table><br /><br />
+        <input type="number" placeholder='Input your employee id here!' onChange={updateEmpId} /> <br />
+        <input type="text" placeholder='Input your employee name here!' onChange={updateEmpName} /> <br />
+        <input type="text" placeholder='Input your location here!' onChange={updateLocation} /> <br />
+        <button onClick={getAllRecords}>Refresh Data</button>
+        <button onClick={insertContent}>Post Data</button>
+        <button onClick={deleteData}>Delete Data</button>
+        <button onClick={UpdateData}>update Data</button>
+    </div>
+  )
+}
+
+export default Employees
+
+________________________________________________________________________________________________________________
+SERVER - DB.json
+
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Dinesh",
+      "location": "Chennai"
+    },
+    {
+      "id": "2",
+      "name": "Raja",
+      "location": "madurai"
+    },
+    {
+      "id": "3",
+      "name": "Vignesh",
+      "location": "Trichy"
+    },
+    {
+      "id": "4",
+      "name": "Rakesh",
+      "location": "Mumbai"
+    },
+    {
+      "id": "1234",
+      "name": "krish",
+      "location": "bangalore"
+    },
+    {
+      "id": "235",
+      "name": "Manoj",
+      "location": "bangalore"
+    }
+  ]
+}

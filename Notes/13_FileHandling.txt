@@ -1,0 +1,120 @@
+Learning Objectives 23th Sep 2022 - FN:
+
+	- File handling basics
+	- Stream (Bytes based)
+	- Highlevel (Character based)
+
+
+
+throw		- To actually throw an exception to the caller of the method
+throws	- Indicator to denote that the method may throw an exception when called
+Throwable	- Is the parent class for all the exceptions and errors
+
+final		- It is a keyword helps to create constants(constant variable, final method, final class)
+finally	- It is a block used while handling exceptions (To exceute a mandatory statement whether there is an exception or not)
+finalize	- A method used by Garbage Collector (Available inside JVM - Cleans the unused memory) 
+
+
+Files:
+
+	- Are stored in the hard disk with some extension
+	- The ones which doesn't have any extension are treated as folders
+	- The files concept in Java is used to generate a report/store secret keys etc
+
+	- The file/folder can be created, deleted or controlled with a legacy class called File
+
+		File file = new File("Path");
+
+	- file.exists() 		---> If the file is available in the computer returns true, false otherwise
+	- file.isFile() 		---> Returns true if it is a file, false otherwise
+	- file.isDirectory()	---> Returns true if it is a folder, false otherwise
+	
+	
+________________________________________________________________________________________________________________________________
+
+
+Learning Objectives 26th Sep 2022 - AN:
+
+	- Stream based
+		- FileReading
+		- FileWriting
+
+	- Character based
+		- FileReading
+		- FileWriting
+
+	- Serialization
+
+
+File IO:
+
+	- So far we have discussed on the operations on files
+	- There are two types of classes used in Java for file handling
+
+		- Stream based
+			- Data will be processed byte by byte (Stream of bytes)
+		- Character based
+			- Data will be processed character by character (Stream of characters)
+
+	- Java classes used for stream based file IO:
+
+		- Reading:
+			- FileInputStream
+			- BufferedInputStream
+			- DataInputStream
+
+		- Writing:
+			- FileOutputStream
+			- BufferedOutputStream
+			- DataOutputStream
+
+
+FileInputStream:
+
+	- Reads the data from file byte by byte
+
+BufferedInputStream
+
+	- Reads the data from the file into a buffer at once
+
+
+FileOutputStream:
+
+	- Writes the data into the file byte by byte
+
+BufferedOutputStream:
+
+	- Writes the data into the file as a byte arry (buffer)
+
+
+
+
+
+In Java the character based input and output is done with the help of the following classes:
+
+	For input operations:
+		- FileReader
+		- BufferedReader
+
+	Four output operations:
+		- FileWriter
+		- BufferedWriter
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

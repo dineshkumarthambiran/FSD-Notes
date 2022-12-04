@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/combinators_example.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="outerdiv" id="parent">
+        <p>Para 1</p>
+        <p>Para 2</p>
+        <p>Para 3</p>
+        <div>
+            <p>Paragraph1 inside the child div </p>
+            <p>Paragraph2 inside the child div </p>
+            <div class="outerdiv">
+                <p>Great grand child1</p>
+                <p>Great grand child2</p>
+            </div>
+        </div>
+        <p>Para (sibling 1) after inner div</p>
+        <p>Para (sibling 2) after inner div</p>
+    </div>
+    <p>Paragraph1 outside the outer div</p>
+    <p>Paragraph2 outside the outer div</p>
+
+    
+</body>
+</html>

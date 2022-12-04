@@ -1,0 +1,185 @@
+Learning Objectives 29th Sep 2022 
+
+	- Mongo db intro
+	- listing available dbs
+	- create a db
+	- showing collections
+	- create collection
+	- insert a documents
+	- insert multiple documents
+	- finding record/records using single or multiple conditions
+	- Updating a record/s
+	- Altering columns
+	- Misc functions ($set, $unset, $inc, $rename a field/fields of all the records, $lt, $gt)
+	- remove records
+	- dropping collection
+	- dropping database
+
+How data is stored in Mongodb:
+
+	Databases ---> Collections ---> Documents ---> fields/properties
+
+Mongo db intro:
+
+	- NoSql Database
+	- BSON - Binary Java Script Object Notation
+	- Most popular NoSql database
+	- Easier to use
+	- Easier to scale
+	- Very suitable for storing and retrieving unstructured data
+	- Faster retrieval
+	- Very easy syntax - Exactly JSON objects are used
+	- Tech giants - Google, Youtube etc ... Are using NoSQL Databases for their search operations
+
+
+Software installations:
+
+	- Mongodb community server ---> Will help to install Mongodb in the local host
+		Mongo server (Mongo Daemon) ---> mongod ---> Will start the Mongo Daemon (Sub Thread)
+		Mongo client (Mongo shell)  ---> mongo  ---> Will start the Mongo shell (Client) ---> The mongo commands can be typedin
+	
+	- Mongo cloud ---> Aws, Atlas (Cloud service by Mongo) etc
+
+
+listing available dbs:
+
+	show dbs ---> Lists all the available database
+
+create a db / switch to a db:
+
+	use school   ---> create the schooldb and switch to it
+	db	     ---> Will return the reference to the current db in use
+
+showing collections:
+
+	show collections  ---> Returns all the available collections in the db
+
+create collection:
+
+	db.createCollection("students")
+
+insert a documents:
+	
+	{
+		"first_name":"Mukesh",
+		"last_name":"Khanna",
+		"age": 25,
+		"designations": ["employee","supervisor","tech lead"]
+	}
+
+
+	db.students.insert({
+		"first_name":"Mukesh",
+		"last_name":"Khanna",
+		"age": 25,
+		"designations": ["employee","supervisor","tech lead"]
+	})
+
+
+
+insert multiple documents:
+
+	db.students.insert([{document1},{document2},{document3}])
+
+finding record/records using single or multiple conditions:
+
+To return all the records from the JSON document:
+
+
+find() ---> Brings all the matching documents from the collection:
+
+	db.students.find() ---> Returns all the records	(new version has formatted result)
+	db.students.find().pretty() ---> Returns all the records in a formatted way (deprecated)
+
+findOne() ---> Brings the first matching document from the collection
+
+	db.students.findOne({condition})
+
+
+To return all the mathing records from the db:
+
+	db.students.find({first_name:"Sangita"}) ---> returns the document that has the first_name as "Sangita"
+	- The  $and, $or operators can be used to fetch records using multiple conditions
+
+	db.students.find({$or:[{condition1}, {condition2}]})
+	db.students.find({$and:[{$or:[{},{}]},{condition2}]})
+	db.employee.find({$or:[{$and:[{'ename':'Aswin'}, {'location':'Chennai'}]}, {'sid':300}]})
+	db.students.find({$and:[{first_name: "Sangita"}, {age:{$gt:20}}]})
+
+
+Updating a record/s:
+
+	db.students.update({condition}, {updated data})
+	db.students.update({first_name:"Arun"}, {last_name: "Prasad"})       ---> This will replace the entire record with the updated record, Not recommended
+
+
+	[
+		{
+			'sid':1234,
+			'sname':'Sushmita',
+			'location':'Chennai'
+		},
+
+		{
+			'sid':125,
+			'sname':'Vijay',
+			'location':'Hyderabad'
+		},
+	
+		{
+			'sid':1236,
+			'sname':'Arun',
+			'location':'Mumbai'
+		}
+	]
+
+Mongodb Update:
+
+	- The following update syntax is deprecated in the new version of Mongodb
+	db.employee.update({'sid':125}, {'sname':'Vijaya Kumar'});
+
+
+ Adding a new or updating an existing column (Recommended):
+
+	db.students.update({first_name:"Arun"}, {$set:{last_name:"Prasad"}}) ---> This will patch the updated/new records into the collection
+
+Upserting records:
+
+	db.students.update({cond}, {updated value}, {upsert:true})
+	- This upsert command will create the document if its not available in  the db for updating
+
+Altering columns:
+
+  Droping an existing column:
+
+	db.students.update({first_name:"Sangita"}, {$unset:{email:"", country:""}}) ---> This will remove the columns specified after checking the condition     
+
+Misc functions ($set, $unset, $inc, $rename a field/fields of all the records, $lt, $gt)
+
+Remove records:
+
+	db.students.remove({cond})
+
+
+	- dropping collection
+	- dropping database
+
+
+remove records
+	 db.students.remove({f_name:"Suresh"}, {justOne:true}) ----> Deprecated
+	
+Recommended to use delete or deleteOne or deleteMany
+	db.employee.deleteOne({$or:[ {cond1}, {cond1} ]})
+	db.employee.deleteMany({$or:[ {cond1}, {cond1} ]})
+
+drop a collection:
+
+	db.students.drop()
+mongosh
+drop a db:
+
+	db.dropDatabase()
+
+____________________________________________________________________________________________________________________
+
+

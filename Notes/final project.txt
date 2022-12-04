@@ -1,0 +1,100 @@
+const [username, setUsername] = useState(``);
+    const [password, setPassword] = useState(``);
+    const [userDetails, setUserDetails] = useState([]);
+    // const [jwtTokenR, setJwtTokenR] = useState(``)
+
+    var db_username = ``;
+    var db_email = ``;
+    var username_exists = false;
+    var db_encryptedpwd = ``;
+    // var loginValidationStatus = false;
+
+    // const dispatch = useDispatch();
+    const navigate = useNavigate();
+    // console.log(jwtToken);
+
+    useEffect(() => {
+
+        axios.get(`http://localhost:8080/users`)
+            .then(res => setUserDetails(res.data))
+            .catch(err => console.log(err))
+
+    })
+    for (let i = 0; i < userDetails.length; i++) {
+        if (username.toLowerCase() === (userDetails[i].id).toLowerCase()) {
+
+            db_username = userDetails[i].userid;
+            db_email = userDetails[i].emailid;
+            db_encryptedpwd = userDetails[i].password;
+            username_exists = true
+        }
+    }
+
+    async function Login(event) {
+
+        // event.preventDefault();
+        // // 
+        // loginValidationStatus = await bcrypt.compare(password, db_encryptedpwd)
+
+
+
+        // if ( username == "" || password == "" ) {
+        //     alert(`Please fill all the details`)
+        // }
+        // else if ( !username_exists ){
+        //     alert(`Username doesn't Exist`)
+        // }
+        // else if (!loginValidationStatus){
+        //     alert(`Password doesnt match our records`)
+        // }
+        // else if (loginValidationStatus) 
+        // {
+
+            axios.post(`http://localhost:8080/login`, { username, password })
+                .then(response => {
+                    if(response.data.jwtToken){
+                        localStorage.setItem("user", JSON.stringify(response.data));
+                    }
+                    return response.data
+                })
+
+
+                //     {
+                //     localStorage.setItem("user", JSON.stringify(res.data.jwtToken))
+                //     setJwtTokenR(res.data.jwtToken)
+                //     console.log(res)
+                // })
+                .catch(err => console.log(err))
+            // alert("login success. Navigating to dashboard...")
+            
+                // setTimeout(() => {
+                        
+                navigate("/dashboard")  
+                window.location.reload();      
+                // }, 5000);
+            
+            // }
+
+    }
+
+    const navigateToSignUp = () => {
+
+        navigate("/signup")
+
+    }
+
+
+localStorage.setItem('Accountadded', JSON.stringify(response.data))
+
+{
+    "accno": 12356,
+    "accname": "Ravi Balan",
+    "bankname": "ICICI",
+    "mobilenumber": 98842551,
+    "branch": "chennai",
+    "balance": 100,
+    "userid": "dinesh"
+}
+
+
+{"id":"amuthesh","name":"Amutheswaran","emailid":"amuthesh@gmail.com","mobno":9884255165,"password":"$2a$10$UhuvKWRk0oP0oJTUnvEVYeRD5KFVPT7f4iTmVeh3AzlQRljV0QJIW"}

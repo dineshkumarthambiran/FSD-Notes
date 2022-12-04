@@ -1,0 +1,139 @@
+Learning Objectives 26th July 2022:
+
+	- git basics
+	- git architecture
+	- git operations
+
+
+What is git?
+
+	- Source Code Management
+	- Version Controlling System
+	- Invented by Linus Torvalds (Who invented Linux OS)
+	- Open Source
+	- Set of commands
+
+
+Steps to push the local repo to git remote repo:
+
+	- Make a local git repo (Converted into a git repo)
+		- git init
+		
+	- Add remote origin
+		- Telling the final destination
+		- git remote add origin "url of the remote repo"		
+
+	- Move the changes to the staging area
+	- Move the changes from staging area to commit history
+	- From commit history push the changes to rit remote
+
+
+
+
+Before doing git commands the username and email has to be configured:
+
+
+To convert a local folder into a git repo:
+
+	- git init
+
+To tell the final destination(Remote repo):
+
+	- git remote add origin remote repo url
+
+To move a changes on a particular file from local git repo to the staging area:
+
+	- git add file_name
+
+To move all the changes from local git repo to the staging area:
+
+	- git add .
+
+To move all the changes from staging area to the commit history:
+
+	- git commit -m "<File name> Meaningfull commit message"
+
+To push from commit history to git remote account:
+
+	- git push -u origin master
+
+
+To see all the commits with their commit id and commit messages:
+
+	- git log
+
+To remove a particular commit -> get the commit id and then "git reset <commit id>"
+
+===============================================================================================================
+
+
+git pull
+	- Is a process of getting the copy of the project components 
+	- .git folder is not downloaded along with the project content hence other configuration information will be missing
+	- Because we don't get the configurations, need to add the remote orgins
+
+git clone
+	- Is a process of getting the copy of the complete project including the complete project structure
+	- .git folder is also downloaded along with all the other configuration information
+	- Because we get all thge configurations, no need to add the remote orgins
+	- Once a repo is cloned then it can easily pulled with git pull command
+	
+forking
+	- Is a process of getting the copy of the repo into our remote gitlab account
+
+git branches
+	- Seeing the branches in our repo
+	- Create a branch
+	- Merging a branch
+	- Deleting a branch
+
+
+To see log messages of a specific branch:
+
+	git log master..branchname
+
+
+===============================================================================================================
+
+
+Create a remote repository and name it as "first-project"
+Create a project in local computer 
+Add the following files into the local folder
+
+	- index.html
+	- style.css
+	- script.js
+	images ---> passport.png
+
+Push the project into the remote repo
+
+
+
+- Delete a file locally
+- Push the same to remote
+
+- Delete a file in the remote 
+- Pull the changes to local
+
+Windows Command:
+
+ to change the directory
+ to delete a file
+ to delete a folder
+ to create a folder
+ to create a file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

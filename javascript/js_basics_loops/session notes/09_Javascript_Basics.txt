@@ -1,0 +1,116 @@
+Java Script:
+
+	Learning objectives:
+
+		- JS fundamentals
+
+What is JS?
+
+	- One of most popular and widely used programming languages in the world
+	- Used in Front end and backend as well
+	- Prev used in the browser only but now complete apps can be created with JS
+
+Where does JS Run?
+	
+	- Can run in JS Engines
+	- Can run with node server as well
+
+What is JS and ECMA Script?
+
+	- JS is a language and ECMA is a consortium that standardized JS
+
+System Setup:
+
+	- Install node if want to run JS as a standalone app
+		- To run a js pgm ===> node index.js
+	- Or any browser can run the JS code
+
+
+console.log('Hello world');
+alert('Hello world');
+
+- In an html file JS can be added in two different ways:
+
+	- First way to use the <script></script>
+		<script>
+			console.log('Hello world');
+		</script>
+
+	- Use a seperate file for JS (SOC - Seperation of Concern)
+
+
+Variables:
+
+	- In JS the variables can be created with the var and let keywords
+	- var allows the redeclaration of variables - Which may lead to confusion
+	- let restrics the recreation of the variables
+
+Static vs dynamic typed languages:
+
+	- Statically typed languages ---> Java, C# etc ---> Once variable declared of a particular type can't be changed again to a different type
+
+types available in Java script are:
+
+primitive types: 
+
+string
+number
+boolean
+undefined
+null: Object
+
+Reference types:
+
+Object:
+	- Consists of complex data items inside
+	let person = {
+		"sid":"123",
+		"sname":"Vignesh",
+		"city":"Chennai"
+	}
+
+	console.log(person.sname);
+		or
+	console.log(person['sname']);
+
+
+
+	course ---> courseid, coursename, deptname
+	
+
+Array:
+	- Is a collection of items
+	- Can be access using the index
+	- Array is also an object in Java script
+
+Control structures:
+
+	- The statements that can change the normal flow of a program is called control structure
+
+	Types:
+
+		- Conditional constructs (if else, if else if, nested if..., switch case)
+		- Looping statements
+		    - To do a task again and again
+	
+			- for loop 	(When you know the total number of execution)
+			- while loop	(When the loop has to execute until a condition is failing)
+			- do while	(When you want to execute the loop atleast once)
+
+
+		for loop:
+
+			- for(initialization; condition; reinitiliazation){
+				//body of the loop
+			  }
+
+		while loop:
+
+			  initialization;
+			  while(condition){
+				reinitialization;
+			  }
+
+
+
+

@@ -1,0 +1,42 @@
+Learning Objectives 17th Aug 2022:
+
+	- Props using class based component
+	- States introduction
+	- Using states with a class based component
+	- Live Demo
+
+
+- Props are useful in transfering data from parent to child components
+- States are useful in maintaining the data inside a component
+- Props are immutable (Read only)
+- States are mutable (Read and Write)
+	
+- In Class based components the state is available inside the 'this' keyword
+- The state for a component is created whenever a new state is created and the constructor is instantiated
+- The this.setState() should be called when we want to modify the current state
+
+ this.setState({
+        // likes: parseInt(this.likes+1)
+        message: "Hello",
+        likes: this.state.likes+1
+ })
+
+
+- The this keyword is a tricky part in the class based components
+- Both props and state inside the class based component needed to be referred with the this keyword
+- When we are using arrow function as event handler we don't want to pass the this keyword to the event handling function
+- When we are using a normal function for event handling we may have to pass the this keyword to the function
+
+    //   this.increaseLikes = this.increaseLikes.bind(this)
+
+
+1. Increment and decrementing the likes
+2. Passing props from parent to the child and in the child it should be pasted to the property in the state then the state property needed to be rendered on the page
+3. Posting a new comment using an input box (react states)
+
+
+
+1. How to render an array element in react and display the values
+2. How to get the value from an input box in react
+3. How to push a new element into an array in java script
+

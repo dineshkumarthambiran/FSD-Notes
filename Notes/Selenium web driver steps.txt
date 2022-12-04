@@ -1,0 +1,111 @@
+Steps for selenium web driver:( for automating repetative testing methods -  eg.login or add to cart etc)
+
+1)download the chromedriver from the below link https://chromedriver.chromium.org/downloads
+2)download testNg in install software for eclipse and open a maven projector spring starter project with dependency
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+		    <groupId>org.seleniumhq.selenium</groupId>
+		    <artifactId>selenium-java</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+		    <groupId>org.testng</groupId>
+		    <artifactId>testng</artifactId>
+		    <version>6.14.3</version>
+		    <scope>test</scope>
+		</dependency>
+
+3) create normal class with a testing method with @test annotation.
+
+4) 	@Test
+	public void Addtocarttest() {
+//		invoking selenium  chrome browser
+		System.setProperty("webdriver.chrome.driver", "C://FULL STACk//chromedriver_win32//chromedriver.exe");
+		driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+		driver.get("https://petstore.octoperf.com/actions/Catalog.action");
+		System.out.println("Launch petstore home page");
+
+
+5)Selenium web driver finding element by xpath..
+
+syntax for xpath
+//tagname[@attribute='value']
+
+some examples
+//input[@name='username']
+
+//p[text()='Paul Collings']
+
+//button[@type='submit']
+
+//input[@name='keyword']
+
+//img[@name='img_cart']
+
+
+*************************
+
+Action class :
+WebElemnt element = driver....
+Actions action = new Actions(driver);
+action.moveToElement(element).click().perform();
+
+Methods of Action Class :
+MouseActions
+1.doubleClick() :
+2.clickAndHold():
+3.dragAndDrop():
+4.moveToElement();
+5.contextClick():
+
+Keyboard ACtions :
+1.sendKeys()
+2.keyUp()
+3.keyDown()
+
+Perform Mouse Hover ACtion on the web Element :
+Actions action = new Actions(driver);
+WebElemnt elementMenMenu = driver....
+action.doubleClick()
+
+*****************
+
+Pop up web window :
+Do you want to leave this page - ok , cancel -- confirmation alert
+Enetr valid hint :--------------TEXT-------Prompt alert
+Waring : OK---simple alert
+Alert is an Interface :
+1)void dismiss ://To click cancel button
+driver.switchTo().alert().dismiss();
+2) void accept() : //to click on OK button
+driver.switchTo.alert().accept();
+3)String getText() ://To capture the alert message
+driver.switchTo.alert().getText();
+4)void sendKeys(String string1)://To send some data
+driver.switchTo.alert().sendKeys("ABC");
+
+
+********************
+Frames :
+drivr.switchTo().frame()
+Int size=driver.findElemets(By.tageName("iframe")).size();
+How to switch over the elements in the iframes :
+1.By Index
+-->driver.switchTo().frame(0);
+2.By Name or Id
+-->driver.switchTo().frame("value");
+3.By Web Element
+-->driver.switchTo().frame(webelement);
+-->driver.switchTo().parentFrame();
+-->driver.switchTo().defaultContect();
+
+*******************
+
+JavascriptExecutor js = (JavascriptExecutor) driver;
+	
+//get the height of the webpage and scroll to the end
+js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+Thread.sleep(2000);
+js.executeScript("window.scrollTo(document.body.scrollHeight,0)");

@@ -1,0 +1,95 @@
+Learning Objectives 21st Sep 2022 - FN
+	- Exception handling
+	- Types of exceptions
+		- Checked exceptions (Thrown at compilation time, Need to be handled to continue with the normal execution)
+		- Unchecked exceptions (Thrown at runtime, Need to be handled but can also be left unhandled, 
+			If unhandled the exception may possibly stop the normal execution during runtime)
+	UnChecked exceptions:
+
+		- ArithmeticException			---> Dividing a number by zero
+		- ArrayIndexOutofBoundsException	---> When we are trying to access the index which exceeds the actual array elements
+		- NullPointerException			---> When we are trying to access a method/property using a null object (Uninitialized object)
+
+	
+- try{} block may have any number of catch blocks
+
+	try{
+		// Code to access array though its index 								---> ArrayIndexOutofBoundsException
+		// Code to access a method with an object that might possibly have the null value	---> NullPointerException
+		// Code to divide a number by another number which might possibly have null value	---> ArithmeticException
+
+		// Next line
+	}
+	catch(ArrayIndexOutofBoundsException e){ code to handle the exception}
+	catch(NullPointerException e) { code to handle the exception}
+	catch(ArithmeticException e) { code to handle the exception}
+	
+	
+- A single catch block can be used to handle all the exceptions in the hierarchy (Using Exception in the catch block)
+
+	try{
+		// Code to access array though its index 								---> ArrayIndexOutofBoundsException
+		// Code to access a method with an object that might possibly have the null value	---> NullPointerException
+		// Code to divide a number by another number which might possibly have null value	---> ArithmeticException
+
+		// Next line
+	}
+	catch(Exception e){ code to handle the exception}
+	
+
+- A single catch block can be used to handled the exception that possibly thrown in the code (Multi catch clause)
+
+	try{
+		// Code to access array though its index 								---> ArrayIndexOutofBoundsException
+		// Code to access a method with an object that might possibly have the null value	---> NullPointerException
+		// Code to divide a number by another number which might possibly have null value	---> ArithmeticException
+
+		// Next line
+	}
+	catch(ArithmeticException | NullPointerException | ArrayIndexOutofBoundsException e){ code to handle the exception}
+
+
+- Checked exceptions:
+
+	- The exceptions thrown during compile time are called checked exceptions
+	- The checked exceptions are not subclasses of the RuntimeException class
+	- If the checked exceptions are unhandled the compiler throws it as error 
+	- Must be handled inorder to be able to run the program
+
+	- Examples:
+
+		- IOException (Parent) 			---> May happen when trying to read or write from or to a file
+		- FileNotFoundException (Child) 	---> May happen when trying to open a file (Subclass of IOException)
+		- InterruptedException			---> May happen when asking the thread to sleep
+
+
+Thread:
+
+	- A concurrent process 
+	- Light weight process
+	- By default our main function is a thread
+
+- Incase if the responsibility of handling exceptions need to be differed to the calling function then it can be thrown
+- If you want to indicate that a function is throwing exception we can add throws at the function signature
+
+Eg.
+
+public void openFile() throws FileNotFoundException{
+	//Code to open a file
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- The try{} and catch blocks can be nested
